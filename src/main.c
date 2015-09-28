@@ -1,6 +1,7 @@
 #include "main.h"
 
 int main( int argc, char* argv[] ){
-	init_scr();
+	initscr();
+	endwin();
 	return 0;
 }
