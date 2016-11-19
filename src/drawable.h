@@ -14,4 +14,6 @@ private:
     int color;
 };
 
+extern Drawable DRAW_NULL;
+
 #endif

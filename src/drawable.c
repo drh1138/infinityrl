@@ -1,5 +1,7 @@
 #include "drawable.h"
 
+Drawable DRAW_NULL( '&', COLOR_MAGENTA );
+
 Drawable::Drawable( char s, int c ) : symbol( s ), color( c ){
 }
 

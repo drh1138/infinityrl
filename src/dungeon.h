@@ -4,9 +4,11 @@
 #include "drawable.h"
 #include "monster.h"
 
+extern Drawable DRAW_DEF_TERRAIN;
+
 class DungeonTerrain : public Drawable {
 public:
-    DungeonTerrain( char symbol = '.', int color = COLOR_WHITE );
+    DungeonTerrain( Drawable& drawData = DRAW_DEF_TERRAIN );
     ~DungeonTerrain();
 };
 

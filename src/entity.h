@@ -10,9 +10,11 @@ public:
 private:
 };
 
+extern EntityType ET_NULL;
+
 class Entity{
 public:
-    Entity( EntityType* entityType );
+    Entity( EntityType* entity type = & ET_NULL );
     virtual ~Entity();
     EntityType& getEntityType();
 private:
