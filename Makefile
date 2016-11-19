@@ -1,5 +1,5 @@
 all: dbg
-	
+
 release: dbg
 	strip --strip-debug bin/main
 
@@ -8,11 +8,18 @@ dbg: dirs main
 dirs:
 	mkdir -p bin/ obj/
 
-main: dirs main.o
-	gcc obj/main.o -o bin/main -lncurses
+main: dirs dungeon monster drawable
+	g++ -g -c src/main.c -o obj/main.o
+	g++ obj/main.o obj/dungeon.o obj/monster.o obj/drawable.o -o bin/main -lncurses
 
-main.o: dirs src/main.c src/main.h
-	gcc -g -c src/main.c -o obj/main.o
+dungeon: dirs
+	g++ -g -c src/dungeon.c -o obj/dungeon.o
+
+monster: dirs
+	g++ -g -c src/monster.c -o obj/monster.o
+
+drawable: dirs
+	g++ -g -c src/drawable.c -o obj/drawable.o
 
 clean:
 	rm -fr bin/ obj/
